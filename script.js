@@ -4,6 +4,8 @@ const navLinks = document.querySelectorAll('.nav-menu a');
 const reveals = document.querySelectorAll('.reveal');
 const particleField = document.getElementById('particle-field');
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const PARTICLE_COUNT_MOBILE = 12;
+const PARTICLE_COUNT_DESKTOP = 20;
 
 const clearParticles = () => {
   if (particleField) {
@@ -21,7 +23,8 @@ const renderParticles = () => {
     return;
   }
 
-  const particleCount = 20;
+  const particleCount =
+    window.innerWidth < 768 ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP;
 
   for (let i = 0; i < particleCount; i += 1) {
     const particle = document.createElement('span');
