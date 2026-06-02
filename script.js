@@ -26,7 +26,7 @@ const renderParticles = () => {
   const particleCount =
     window.innerWidth < 768 ? PARTICLE_COUNT_MOBILE : PARTICLE_COUNT_DESKTOP;
 
-  for (let i = 0; i < particleCount; i += 1) {
+  for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement('span');
     particle.className = 'particle';
     particle.style.left = `${Math.random() * 100}%`;
